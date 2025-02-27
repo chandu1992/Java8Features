@@ -13,7 +13,15 @@ public class OptionalClass {
         List<Integer> arrayData = new ArrayList<>(Arrays.asList(10,20,30,40));
         // Correct way to create an Optional of a List
         Optional<List<Integer>> optional = Optional.of(arrayData);
-
         System.out.println(optional);
+
+        Optional<String> optional1 = Optional.ofNullable(null); // Returns an empty Optional
+        System.out.println(optional1);
+
+        Optional<List<Integer>> optional2 = Optional.ofNullable(null);
+        System.out.println(optional2);
+
+        System.out.println(optional2.orElseGet(() -> Arrays.asList(0)));
+
     }
 }
