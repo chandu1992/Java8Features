@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b50a9d4-44e3-4427-b679-1adce2582ec7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/OptionalClassMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OptionalClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/OptionalClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OptionalClassMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/OptionalClassMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.OptionalClass">
+  <component name="RunManager" selected="Application.OptionalClassMethods">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Java8FeaturesExamples" />
@@ -73,8 +72,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OptionalClassMethods" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.OptionalClassMethods" />
+      <module name="Java8FeaturesExamples" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OptionalClassMethods" />
         <item itemvalue="Application.OptionalClass" />
         <item itemvalue="Application.Main" />
       </list>
