@@ -35,11 +35,11 @@ public class OptionalClassMethods {
 
 
         Optional<List<Integer>> optionalOrElseGet = Optional.ofNullable(Arrays.asList(101, 111, 121, 131));
-        List<Integer> newdata =  optionalOrElseGet.orElseGet(()->Arrays.asList(1,2,3,4));
+        List<Integer> newdata = optionalOrElseGet.orElseGet(() -> Arrays.asList(1, 2, 3, 4));
         System.out.println(newdata);//[101, 111, 121, 131]
 
         Optional<List<Integer>> optionalOrElseGet1 = Optional.ofNullable(null);
-        List<Integer> newdata1 =  optionalOrElseGet1.orElseGet(()->Arrays.asList(1,2,3,4));
+        List<Integer> newdata1 = optionalOrElseGet1.orElseGet(() -> Arrays.asList(1, 2, 3, 4));
         System.out.println(newdata1);//[1, 2, 3, 4]
 
 
@@ -53,10 +53,14 @@ public class OptionalClassMethods {
 
 
         Optional<List<String>> optionalOrElseGetThrowNew = Optional.ofNullable(Arrays.asList("me", "you"));
-       List<String> getData =  optionalOrElseGetThrowNew.get();
+        List<String> getData = optionalOrElseGetThrowNew.get();
         System.out.println(getData); // [me, you]
         Optional<List<String>> optionalGet = Optional.ofNullable(null);
-        System.out.println(optionalGet.get()); //Exception in thread "main" java.util.NoSuchElementException: No value present
+//        System.out.println(optionalGet.get()); //Exception in thread "main" java.util.NoSuchElementException: No value present
 
+        Optional<String> optionalValue = Optional.empty();
+        Optional<String> fallbackValue = Optional.of("Fallback");
+        Optional<String> result = optionalValue.or(() -> fallbackValue);
+        result.ifPresent(System.out::println); // Fallback
     }
 }
