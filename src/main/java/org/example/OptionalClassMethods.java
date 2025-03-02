@@ -10,7 +10,8 @@ public class OptionalClassMethods {
 
         List<Integer> arrayData = new ArrayList<>(Arrays.asList(10, 20, 30, 40));
         // Correct way to create an Optional of a List
-        Optional<List<Integer>> optional = Optional.ofNullable(arrayData);
+
+        Optional<List<Integer>> optional = Optional.ofNullable(Arrays.asList(10, 20, 30, 40));
         System.out.println(optional.isPresent()); // if data present it return true
 
         Optional<List<Integer>> optional1 = Optional.ofNullable(null);
@@ -21,11 +22,9 @@ public class OptionalClassMethods {
         Optional<List<Integer>> mydata = Optional.of(Arrays.asList(10, 11, 12, 13));
         Optional<List<Integer>> mydata1 = Optional.ofNullable(null);
 
-
-        // Using ifPresentOrElse correctly
         mydata1.ifPresentOrElse(
-                list -> list.forEach(System.out::println),  // Consumer<T> (runs if value is present)
-                () -> System.out.println("List is empty")   // Runnable (runs if value is empty)
+                list -> list.forEach(System.out::println),  // [10, 20, 30, 40]
+                () -> System.out.println("List is empty")   // List is empty
         );
 
         Optional<List<Integer>> optionaldata = Optional.ofNullable(Arrays.asList(10, 11, 12, 13));
@@ -48,10 +47,16 @@ public class OptionalClassMethods {
         List<String> value = optionalOrElseGet2.orElseThrow(() -> new RuntimeException("Value not found!"));
         System.out.println(value); //[Gauri, Chandu, Pande, shende]
 
-        Optional<List<String>> optionalOrElseGetThrow = Optional.ofNullable(null);
-        List<String> value1 = optionalOrElseGetThrow.orElseThrow(() -> new RuntimeException("Value not found!"));
-        System.out.println(value); //Exception in thread "main" java.lang.RuntimeException: Value not found!
+//        Optional<List<String>> optionalOrElseGetThrow = Optional.ofNullable(null);
+//        List<String> value1 = optionalOrElseGetThrow.orElseThrow(() -> new RuntimeException("Value not found!"));
+//        System.out.println(value); //Exception in thread "main" java.lang.RuntimeException: Value not found!
 
+
+        Optional<List<String>> optionalOrElseGetThrowNew = Optional.ofNullable(Arrays.asList("me", "you"));
+       List<String> getData =  optionalOrElseGetThrowNew.get();
+        System.out.println(getData); // [me, you]
+        Optional<List<String>> optionalGet = Optional.ofNullable(null);
+        System.out.println(optionalGet.get()); //Exception in thread "main" java.util.NoSuchElementException: No value present
 
     }
 }
