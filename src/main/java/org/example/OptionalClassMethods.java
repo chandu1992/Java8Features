@@ -42,5 +42,16 @@ public class OptionalClassMethods {
         Optional<List<Integer>> optionalOrElseGet1 = Optional.ofNullable(null);
         List<Integer> newdata1 =  optionalOrElseGet1.orElseGet(()->Arrays.asList(1,2,3,4));
         System.out.println(newdata1);//[1, 2, 3, 4]
+
+
+        Optional<List<String>> optionalOrElseGet2 = Optional.ofNullable(Arrays.asList("Gauri", "Chandu", "Pande", "shende"));
+        List<String> value = optionalOrElseGet2.orElseThrow(() -> new RuntimeException("Value not found!"));
+        System.out.println(value); //[Gauri, Chandu, Pande, shende]
+
+        Optional<List<String>> optionalOrElseGetThrow = Optional.ofNullable(null);
+        List<String> value1 = optionalOrElseGetThrow.orElseThrow(() -> new RuntimeException("Value not found!"));
+        System.out.println(value); //Exception in thread "main" java.lang.RuntimeException: Value not found!
+
+
     }
 }
