@@ -63,14 +63,5 @@ public class OptionalClassMethods {
         Optional<String> result = optionalValue.or(() -> fallbackValue);
         result.ifPresent(System.out::println); // Fallback
 
-        Optional<String> optionalValue = Optional.empty();
-        Optional<String> fallbackValue = Optional.of("Fallback");
-        Optional<String> result = optionalValue.or(() -> fallbackValue);
-        result.ifPresent(System.out::println);
-
-        Optional<String> optionalValue = Optional.empty();
-        Optional<String> fallbackValue = Optional.of("Fallback");
-        Optional<String> result = optionalValue.or(() -> fallbackValue);
-        result.ifPresent(System.out::println);
     }
 }
