@@ -63,5 +63,14 @@ public class OptionalClassMethods {
         Optional<String> result = optionalValue.or(() -> fallbackValue);
         result.ifPresent(System.out::println); // Fallback
 
+
+        Optional<List<Integer>> optionalOrElseGet = Optional.ofNullable(Arrays.asList(101, 111, 121, 131));
+        List<Integer> newdata = optionalOrElseGet.orElseGet(() -> Arrays.asList(1, 2, 3, 4));
+        System.out.println(newdata);//[101, 111, 121, 131]
+
+        Optional<List<Integer>> optionalOrElseGet1 = Optional.ofNullable(null);
+        List<Integer> newdata1 = optionalOrElseGet1.orElseGet(() -> Arrays.asList(1, 2, 3, 4));
+        System.out.println(newdata1);//[1, 2, 3, 4]
+
     }
 }
